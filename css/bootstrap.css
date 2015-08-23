@@ -1123,7 +1123,9 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
- width: 300px;
+}
+#profPic {
+  max-width: 300px;
 height: 300px;
 border-radius: 50px;
 }
