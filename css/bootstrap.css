@@ -60,6 +60,11 @@ strong {
 }
 dfn {
   font-style: italic;
+} 
+#ascii, #ghost, #puzzle {
+min-width: 100%;
+height: 300px;
+border-radius: 50px;  
 }
 h1 {
   font-size: 2em;
