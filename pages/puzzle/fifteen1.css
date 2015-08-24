@@ -1,0 +1,30 @@
+body {
+font-family: Cursive;
+font-size: 14pt;
+} 
+
+#puzzlearea  {
+
+overflow: hidden;
+height:400px;
+width:400px;
+margin: 0 auto;
+
+}
+
+#puzzlearea div{
+
+background-repeat: no-repeat;
+position:relative;
+width: 90px;
+height:90px;
+border:5px solid black; 
+text-align:center;
+font-size:40pt;
+background-image: url("https://cloud.githubusercontent.com/assets/10733570/9433655/ed815994-4a03-11e5-9075-c41d55576250.jpg");
+
+}
+
+p, #w3c, h1{
+text-align: center;
+margin: 30px;
