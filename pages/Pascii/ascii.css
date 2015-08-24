@@ -1,0 +1,35 @@
+body {
+background-color:#CCCCFF;
+font-size: 14pt;
+font-family: Tahoma, Verdana, or sans-serif;
+font-weight: bold;
+}
+h1 {
+font-size: 32pt;
+font-weight: bold;
+text-align:center;
+}
+#text {
+
+font-weight:bold;
+font-size:12pt;
+height: 400px;
+width:100%;
+}
+
+#control {
+margin: 0 auto;
+width:90%;
+
+}
+.outer {
+width:55%;
+margin: 0 auto;
+}
+.inner {
+border:5px solid black;
+display: inline;
+}
+#w3c {
+text-align:right;
+}
