@@ -1,5 +1,6 @@
 <?php
 // Check for empty fields
+function Validate() {
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
    empty($_POST['phone']) 		||
@@ -9,6 +10,11 @@ if(empty($_POST['name'])  		||
 	echo "No arguments Provided!";
 	return false;
    }
+}
+
+function SendEmail($to = 'tmeystel@student.touro.edu')
+    {
+        if(Validate() == true) {
 	
 $name = $_POST['name'];
 $email_address = $_POST['email'];
@@ -16,11 +22,27 @@ $phone = $_POST['phone'];
 $message = $_POST['message'];
 	
 // Create the email and send the message
-$to = "tmeystel@student.touro.edu"; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+// Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 $headers = "From: noreply@tovameystel.me\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";	
-mail($to,$email_subject,$email_body,$headers);
-return true;			
+return (mail($to,$email_subject,$email_body,$headers))? true: false;
+            }
+        else
+            // Invalid inputs
+            return 'err';
+    }
+
+    // Apply function(s). You will get true, false, or err
+    $send   =   SendEmail();
+
+    // On return, you can echo any result
+    if($send == 'err')
+        echo 'Invalid Fields.';
+    elseif($send == false)
+        echo 'An Error Occurred.';
+    else
+        echo 'Email Sent Successfully.';
+
 ?>
