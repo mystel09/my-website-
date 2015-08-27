@@ -35,8 +35,9 @@ return (mail($to,$email_subject,$email_body,$headers))? true: false;
     }
 
     // Apply function(s). You will get true, false, or err
+    echo "about to send"
     $send   =   SendEmail();
-
+echo "went through 2 functions"
     // On return, you can echo any result
     if($send == 'err')
         echo 'Invalid Fields.';
