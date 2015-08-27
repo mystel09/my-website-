@@ -1,11 +1,11 @@
 <?php
 // Check for empty fields
 function Validate() {
-if(empty($_GET['name'])  		||
-   empty($_GET['email']) 		||
-   empty($_GET['phone']) 		||
-   empty($_GET['message'])	||
-   !filter_var($_GET['email'],FILTER_VALIDATE_EMAIL))
+if(empty($_POST['name'])  		||
+   empty($_POST['email']) 		||
+   empty($_POST['phone']) 		||
+   empty($_POST['message'])	||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
 	echo "No arguments Provided!";
 	return false;
@@ -16,10 +16,10 @@ function SendEmail($to = 'tmeystel@student.touro.edu')
     {
         if(Validate() == true) {
 	
-$name = $_GET['name'];
-$email_address = $_GET['email'];
-$phone = $_GET['phone'];
-$message = $_GET['message'];
+$name = $_POST['name'];
+$email_address = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 	
 // Create the email and send the message
 // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
